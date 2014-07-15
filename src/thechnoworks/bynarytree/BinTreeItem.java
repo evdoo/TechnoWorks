@@ -1,4 +1,5 @@
 package thechnoworks.bynarytree;
 
-public class BinTree {
+public class BinTreeItem {
+
 }

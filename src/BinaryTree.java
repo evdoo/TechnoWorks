@@ -8,7 +8,7 @@ public class BinaryTree {
     }
 
     //прохождение дерева.
-    public static void infixTraverse(BinaryTree tree) {
+    public static void print(BinaryTree tree) {
         //поиск крайнего левого элемента.
 
     }

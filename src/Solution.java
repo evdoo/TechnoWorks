@@ -18,7 +18,7 @@ public class Solution {
         while (true) {
             String stringKey = reader.readLine();
             if (stringKey.equals("ShowTree")) {
-                BinaryTree.infixTraverse(tree);
+                BinaryTree.print(tree);
                 break;
             }
             else {

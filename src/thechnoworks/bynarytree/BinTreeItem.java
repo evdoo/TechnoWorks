@@ -3,12 +3,14 @@ package thechnoworks.bynarytree;
 public class BinTreeItem {
 
     public int key;
-    public BinTreeItem left;
-    public BinTreeItem right;
+    public BinTreeItem leftChild;
+    public BinTreeItem rightChild;
+    public BinTreeItem parentItem;
 
-    public BinTreeItem(int key, BinTreeItem left, BinTreeItem right) {
+    public BinTreeItem(int key, BinTreeItem left, BinTreeItem right, BinTreeItem parent) {
         this.key = key;
-        this.left = left;
-        this.right = right;
+        this.leftChild = left;
+        this.rightChild = right;
+        this.parentItem = parent;
     }
 }

@@ -1,10 +1,19 @@
 
 public class BinaryTree {
 
-    public static TreeItem mainRoot;
+    public TreeItem mainRoot;
 
     public BinaryTree(TreeItem root) {
-        this.mainRoot = root;
+     this.mainRoot = root;
+    }
+
+    public String isLeast(TreeItem root) {
+        if (root.leftChild == null && root.rightChild == null) {
+            return root.toString();
+        }
+        else if (root.leftChild == null) {
+            return
+        }
     }
 
     //прохождение дерева.

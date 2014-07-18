@@ -14,4 +14,8 @@ public class TreeItem {
         this.leftChild = left;
         this.rightChild = right;
     }
+
+    public String toString() {
+        return this.keyTree + ":" + this.keyTree;
+    }
 }

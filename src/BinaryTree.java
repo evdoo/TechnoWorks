@@ -1,48 +1,32 @@
 
 public class BinaryTree {
 
-    public TreeItem mainRoot;
-
-    public BinaryTree(TreeItem root) {
-     this.mainRoot = root;
+    //проверка, является ли данный элемент листом. Если у него нет детей - является.
+    public static boolean isLeafLeft(TreeItem node) {
+        return (node.leftChild == null);
     }
 
-    /*public static String isLeaf(TreeItem root) {
-        if (root.leftChild == null) {
-            if (root.rightChild == null) {
-                return root.toString();
-            } else {
-                return isLeaf(root.rightChild);
-            }
-        }
-        else {
-                if (root.rightChild == null) {
-                    return isLeaf(root.leftChild);
-                }
-                else {
-                    return isLeaf(root.leftChild);
-                }
-        }
-    }*/
-
-    public boolean isLeaf(TreeItem node) {
-        return (node.leftChild == null && node.rightChild == null);
+    public static boolean isLeafRight(TreeItem node) {
+        return (node.rightChild == null);
     }
 
     //прохождение дерева.
-    public void print(TreeItem node) {
-        boolean f = isLeaf(node.leftChild);
-        boolean s = isLeaf(node.rightChild);
+    public static void infixTraverse(TreeItem node) {
+        boolean f = isLeafLeft(node);
+        boolean s = isLeafRight(node);
+        //если есть левое поддерево, вызвать метод, засунув туда корень этого поддерева.
         if (!f) {
-            print(node.leftChild);
+            infixTraverse(node.leftChild);
         }
+        //если левый элемент - лист, вывести его значение и значение его корня.
         else {
-            node.leftChild.toString();
-            node.toString();
+            System.out.println(node.leftChild.toString());
+            System.out.println(node.toString());
+            //если у корня есть правое поддерево, вызвать метод, передав в него корень этого поддерева.
             if (!s) {
-                print(node.rightChild);
+                infixTraverse(node.rightChild);
             } else {
-                node.rightChild.toString();
+                System.out.println(node.rightChild.toString());
             }
         }
     }

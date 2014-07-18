@@ -7,19 +7,44 @@ public class BinaryTree {
      this.mainRoot = root;
     }
 
-    public String isLeast(TreeItem root) {
-        if (root.leftChild == null && root.rightChild == null) {
-            return root.toString();
+    /*public static String isLeaf(TreeItem root) {
+        if (root.leftChild == null) {
+            if (root.rightChild == null) {
+                return root.toString();
+            } else {
+                return isLeaf(root.rightChild);
+            }
         }
-        else if (root.leftChild == null) {
-            return
+        else {
+                if (root.rightChild == null) {
+                    return isLeaf(root.leftChild);
+                }
+                else {
+                    return isLeaf(root.leftChild);
+                }
         }
+    }*/
+
+    public boolean isLeaf(TreeItem node) {
+        return (node.leftChild == null && node.rightChild == null);
     }
 
     //прохождение дерева.
-    public static void print(BinaryTree tree) {
-        //поиск крайнего левого элемента.
-
+    public void print(TreeItem node) {
+        boolean f = isLeaf(node.leftChild);
+        boolean s = isLeaf(node.rightChild);
+        if (!f) {
+            print(node.leftChild);
+        }
+        else {
+            node.leftChild.toString();
+            node.toString();
+            if (!s) {
+                print(node.rightChild);
+            } else {
+                node.rightChild.toString();
+            }
+        }
     }
 
     //вписывание элемента в дерево.

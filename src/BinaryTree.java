@@ -1,11 +1,12 @@
 
 public class BinaryTree {
 
-    //проверка, является ли данный элемент листом. Если у него нет детей - является.
+    //проверка, есть ли у элемента дети слева.
     public static boolean isLeafLeft(TreeItem node) {
         return (node.leftChild == null);
     }
 
+    //есть ли у элемента дети справа.
     public static boolean isLeafRight(TreeItem node) {
         return (node.rightChild == null);
     }
@@ -18,17 +19,11 @@ public class BinaryTree {
         if (!f) {
             infixTraverse(node.leftChild);
         }
-        //если левый элемент - лист, вывести его значение и значение его корня.
-        else {
-            System.out.println(node.leftChild.toString());
             System.out.println(node.toString());
             //если у корня есть правое поддерево, вызвать метод, передав в него корень этого поддерева.
             if (!s) {
                 infixTraverse(node.rightChild);
-            } else {
-                System.out.println(node.rightChild.toString());
             }
-        }
     }
 
     //вписывание элемента в дерево.
